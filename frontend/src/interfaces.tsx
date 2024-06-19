@@ -272,7 +272,7 @@ export const data = [
     Country: "USA, Canada",
     Awards: "Nominated for 3 Oscars. Another 5 wins & 15 nominations.",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BNmJhNTgzMWYtZTU5OC00MmE2LTlkN2UtNWE0MmJiNWJmNmZjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/I/51r+IVinZhL._AC_UF1000,1000_QL80_.jpg",
     Ratings: [
       {
         Source: "Internet Movie Database",

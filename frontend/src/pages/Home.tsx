@@ -10,7 +10,7 @@ function Home() {
     <>
       <div className="h-full w-full bg-websiteBgColor">
         <NavBar />
-        <div id="cards">
+        <div id="cards" className="flex flex-wrap">
           {films.map((film) => (
             <Card
               key={film.imdbID}

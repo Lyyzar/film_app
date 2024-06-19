@@ -12,12 +12,16 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       id="main"
-      className="flex w-5/12 m-10 bg-cardColor rounded text-cardTextColor transform hover:scale-105 transition-transform duration-300"
+      className="flex w-550 m-10 bg-cardColor rounded-lg text-cardTextColor transform hover:scale-105 transition-transform duration-300"
     >
-      <div id="image" className="w-40">
-        <img src={poster} className="h-auto w-full" alt="film image" />
+      <div id="image" className="w-44">
+        <img
+          src={poster}
+          className="h-full w-full rounded-l"
+          alt="film image"
+        />
       </div>
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col justify-between w-full">
         <div>
           <div id="film_name-year" className="flex justify-between m-4">
             <div>

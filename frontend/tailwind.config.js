@@ -13,6 +13,9 @@ module.exports = {
         navbarMenuHoverColor: "#c2410c",
         navbarMenuHoverTextColor: "#ffffff",
       },
+      width: {
+        550: "550px",
+      },
     },
   },
   variants: {
