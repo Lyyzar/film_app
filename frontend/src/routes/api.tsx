@@ -1,0 +1,3 @@
+// const getUser: Promise<User>{
+
+// }
