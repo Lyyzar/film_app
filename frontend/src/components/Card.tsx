@@ -12,7 +12,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <div
       id="main"
-      className="flex w-5/12 m-10 mt-0 bg-orange-800 rounded text-white transform hover:scale-105 transition-transform duration-300"
+      className="flex w-5/12 m-10 bg-orange-800 rounded text-white transform hover:scale-105 transition-transform duration-300"
     >
       <div id="image" className="w-40">
         <img src={poster} className="h-auto w-full" alt="film image" />

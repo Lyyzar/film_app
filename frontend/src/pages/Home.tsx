@@ -8,11 +8,12 @@ function Home() {
 
   return (
     <>
-      <NavBar />
       <div className="h-full w-full bg-gray-900">
-        <div className="">
+        <NavBar />
+        <div id="cards">
           {films.map((film) => (
             <Card
+              key={film.imdbID}
               film_name={film.Title}
               runtime={film.Runtime}
               rating={film.Ratings[0].Value}
