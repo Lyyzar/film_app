@@ -8,7 +8,7 @@ function Home() {
 
   return (
     <>
-      <div className="h-full w-full bg-gray-900">
+      <div className="h-full w-full bg-websiteBgColor">
         <NavBar />
         <div id="cards">
           {films.map((film) => (

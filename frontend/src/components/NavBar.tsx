@@ -9,20 +9,20 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-orange-800 p-4">
+    <nav className="bg-navbarBgColor p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <span className="font-semibold text-xl">My Film App</span>
         </div>
         <div className="hidden lg:block">
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 text-navbarMenuTextColor">
             <a
               href="/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavigate("/");
               }}
-              className="text-orange-300 hover:bg-orange-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="hover:bg-navbarMenuHoverColor hover:text-white px-3 py-2 rounded-md text-lg font-medium"
             >
               Home
             </a>
@@ -32,7 +32,7 @@ function NavBar() {
                 e.preventDefault();
                 handleNavigate("/about");
               }}
-              className="text-orange-300 hover:bg-orange-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
             >
               About
             </a>
@@ -42,7 +42,7 @@ function NavBar() {
                 e.preventDefault();
                 handleNavigate("/services");
               }}
-              className="text-orange-300 hover:bg-orange-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
             >
               Services
             </a>
@@ -52,7 +52,7 @@ function NavBar() {
                 e.preventDefault();
                 handleNavigate("/profile");
               }}
-              className="text-orange-300 hover:bg-orange-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium"
+              className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
             >
               Profile
             </a>
