@@ -4,3 +4,5 @@ interface User {
 }
 
 interface LoginResponse {}
+
+export {};
