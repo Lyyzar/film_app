@@ -50,10 +50,10 @@ function Login() {
   // if (isError) return <div>Error</div>;
 
   return (
-    <div className="bg-blue-600 min-h-screen flex items-center justify-center">
-      <div className="p-4 w-full max-w-md bg-blue-400 rounded">
+    <div className="bg-orange-800 min-h-screen flex items-center justify-center">
+      <div className="p-4 w-full max-w-md bg-orange-400 rounded">
         <div className="flex mb-5 items-center">
-          <UserCircleIcon className="size-20 text-white text-blue-500" />
+          <UserCircleIcon className="size-20 text-white text-orange-500" />
           <p className="ml-4 text-xl text-white">Adminisztrációs felület</p>
         </div>
         <form className="flex flex-col">
@@ -80,7 +80,7 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="bg-white text-blue-500 text-xl rounded-full p-1 hover:bg-gray-200"
+            className="bg-white text-orange-500 text-xl rounded-full p-1 hover:bg-gray-200"
             onClick={handleSubmit}
           >
             Bejelentkezés
@@ -90,3 +90,5 @@ function Login() {
     </div>
   );
 }
+
+export default Login;

@@ -5,6 +5,7 @@ import Profile from "./Profile";
 import About from "./About";
 import Home from "./Home";
 import Details from "./Details";
+import Login from "./Login";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/details/:film_name" element={<Details />} />
       </Routes>
     </BrowserRouter>

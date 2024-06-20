@@ -50,11 +50,11 @@ function NavBar() {
               href="/profile"
               onClick={(e) => {
                 e.preventDefault();
-                handleNavigate("/profile");
+                handleNavigate("/login");
               }}
               className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
             >
-              Profile
+              Login
             </a>
           </div>
         </div>
