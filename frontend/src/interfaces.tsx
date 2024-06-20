@@ -20,6 +20,14 @@ export interface LayoutProps {
   children: ReactNode;
 }
 
+export interface LoginResponse {
+  token: string;
+  user: {
+    id: string;
+    username: string;
+  };
+}
+
 export const data = [
   {
     Title: "They Shall Not Grow Old",

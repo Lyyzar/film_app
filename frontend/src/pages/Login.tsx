@@ -1,9 +1,29 @@
 import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import { login } from "../routes/api";
+import { notification } from "antd";
 
 function Login() {
-  function handleSubmit(): void {
-    throw new Error("Function not implemented.");
-  }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(username + " " + password);
+    try {
+      await login(username, password);
+      notification.success({
+        message: "Successfull login",
+        description: "You are successfully logged in!",
+      });
+    } catch (error) {
+      console.log(error, "error");
+      notification.error({
+        message: "Error",
+        description: "Your name or password is incorrect!",
+      });
+    }
+  };
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   // const {
   //   data: users,
@@ -56,7 +76,7 @@ function Login() {
           <UserCircleIcon className="size-20 text-white text-orange-500" />
           <p className="ml-4 text-xl text-white">Adminisztrációs felület</p>
         </div>
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
           <label htmlFor="username" className="mb-2 text-white">
             Email
           </label>
@@ -65,6 +85,7 @@ function Login() {
             className="rounded-full mb-4 p-2 w-full"
             type="email"
             required
+            onChange={(e) => setUsername(e.target.value)}
           />
 
           <div className="mb-10">
@@ -76,12 +97,12 @@ function Login() {
               className="rounded-full mb-4 p-2 w-full"
               type="password"
               required
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
             type="submit"
             className="bg-white text-orange-500 text-xl rounded-full p-1 hover:bg-gray-200"
-            onClick={handleSubmit}
           >
             Bejelentkezés
           </button>
