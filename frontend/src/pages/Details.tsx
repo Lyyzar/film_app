@@ -1,15 +1,14 @@
+import { useLocation, useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import RoundedButton from "../components/RoundedButton";
 import { CardProps } from "../interfaces";
 
-const Details: React.FC<CardProps> = ({
-  film_name,
-  runtime,
-  year,
-  rating,
-  description,
-  poster,
-}) => {
+const Details: React.FC = () => {
+  const location = useLocation();
+  const { film_name } = useParams();
+  const { runtime, year, rating, description, poster } =
+    location.state as CardProps;
+
   return (
     <>
       <Layout>

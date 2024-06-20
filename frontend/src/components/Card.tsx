@@ -1,5 +1,6 @@
 import React from "react";
 import { CardProps } from "../interfaces";
+import { useNavigate } from "react-router-dom";
 
 const Card: React.FC<CardProps> = ({
   film_name,
@@ -9,10 +10,26 @@ const Card: React.FC<CardProps> = ({
   description,
   poster,
 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/details/${encodeURIComponent(film_name)}`, {
+      state: {
+        film_name,
+        runtime,
+        year,
+        rating,
+        description,
+        poster,
+      },
+    });
+  };
+
   return (
     <div
       id="main"
       className="flex w-550 m-10 bg-cardColor rounded-lg text-cardTextColor transform hover:scale-105 transition-transform duration-300"
+      onClick={handleClick}
     >
       <div id="image" className="w-44">
         <img

@@ -11,21 +11,10 @@ const App: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/about"
-          element={
-            <Details
-              film_name="Knives Out"
-              year={2019}
-              runtime="130 min"
-              description="A detective investigates the death of a patriarch of an eccentric, combative family."
-              rating="8.1/10"
-              poster="https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SX300.jpg"
-            />
-          }
-        />
+        <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/details/:film_name" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );
