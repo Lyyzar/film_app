@@ -1,10 +1,12 @@
+import Layout from "../components/Layout";
 import NavBar from "../components/NavBar";
 
 function Profile() {
   return (
     <>
-      <NavBar />
-      <h1>Profile</h1>
+      <Layout>
+        <div>asd</div>
+      </Layout>
     </>
   );
 }

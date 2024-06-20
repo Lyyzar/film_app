@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface User {
   username: string;
   password: string;
@@ -12,6 +14,10 @@ export interface CardProps {
   rating: string;
   description: string;
   poster: string;
+}
+
+export interface LayoutProps {
+  children: ReactNode;
 }
 
 export const data = [
