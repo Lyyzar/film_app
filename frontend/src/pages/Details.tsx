@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import RoundedButton from "../components/RoundedButton";
 import { CardProps } from "../interfaces";
 
 const Details: React.FC<CardProps> = ({
@@ -24,14 +25,17 @@ const Details: React.FC<CardProps> = ({
                     <div className="font-semibold text-2xl">{film_name}</div>
                     <div className="text-xl">{year}</div>
                   </div>
-                  <div>{rating}⭐</div>
+                  <div className="text-xl">{rating}⭐</div>
                 </div>
                 <div id="description" className="m-4 text-xl">
                   <div className="w-full h-auto">{description}</div>
                 </div>
               </div>
-              <div id="runtime" className="m-4 text-xl">
+              <div id="runtime" className="m-4 flex justify-between text-xl">
                 <div>Runtime: {runtime}</div>
+                <div>
+                  <RoundedButton />
+                </div>
               </div>
             </div>
           </div>
