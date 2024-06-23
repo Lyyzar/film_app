@@ -14,8 +14,16 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  findOne(id: number): Promise<User> {
-    return this.userRepository.findOne({ where: { id } });
+  findByUsername(username: string): Promise<User> {
+    return this.userRepository.findOne({ where: { username } });
+  }
+
+  async validateUser(username: string, password: string): Promise<User> {
+    const user = await this.findByUsername(username);
+    if (user && user.password === password) {
+      return user;
+    }
+    return null;
   }
 
   create(user: User): Promise<User> {

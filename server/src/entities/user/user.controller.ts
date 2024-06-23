@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  BadRequestException,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.entity';
 
@@ -11,10 +19,11 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string): Promise<User> {
-    return this.userService.findOne(+id);
+  @Get(':username')
+  findOne(@Param('username') username: string): Promise<User> {
+    return this.userService.findByUsername(username);
   }
+
 
   @Post()
   create(@Body() user: User): Promise<User> {
