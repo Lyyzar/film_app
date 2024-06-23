@@ -2,8 +2,11 @@ import { UserCircleIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { login } from "../routes/api";
 import { notification } from "antd";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(username + " " + password);
@@ -13,6 +16,7 @@ function Login() {
         message: "Successfull login",
         description: "You are successfully logged in!",
       });
+      navigate("/");
     } catch (error) {
       console.log(error, "error");
       notification.error({
