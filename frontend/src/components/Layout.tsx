@@ -4,15 +4,17 @@ import NavBar from "./NavBar";
 import { getUser } from "../routes/api";
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const queryClient = useQueryClient();
+  const token = localStorage.getItem("token");
 
   const {
-    data: users,
+    data: user,
     isLoading,
     isError,
+    error,
   } = useQuery({
     queryKey: ["user"],
     queryFn: getUser,
+    enabled: !!token,
   });
 
   if (isLoading) return <div>Loading...</div>;
