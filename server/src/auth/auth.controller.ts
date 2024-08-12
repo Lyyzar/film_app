@@ -8,6 +8,7 @@ import {
   Req,
   UseGuards,
   UnauthorizedException,
+  Logger,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from 'src/dto/LoginDto';
@@ -15,6 +16,8 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 
 @Controller('auth')
 export class AuthController {
+  private readonly logger = new Logger(AuthController.name);
+
   constructor(private authService: AuthService) {}
 
   @HttpCode(HttpStatus.OK)
@@ -23,9 +26,10 @@ export class AuthController {
     return this.authService.login(signInDto);
   }
 
-  @UseGuards(JwtAuthGuard)
+  //@UseGuards(JwtAuthGuard)
   @Get('getUser')
   async getUser(@Req() req: Request) {
+    this.logger.log('In authcontrollers getUser');
     const authHeader = req.headers['authorization'];
     if (!authHeader) {
       throw new UnauthorizedException('No token provided');
