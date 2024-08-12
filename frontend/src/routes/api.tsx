@@ -10,7 +10,7 @@ export const login = async (
   password: string
 ): Promise<LoginResponse> => {
   try {
-    const response = await api.post(`http://localhost:3001/auth/login`, {
+    const response = await api.post(`/auth/login`, {
       username,
       password,
     });
@@ -26,7 +26,7 @@ export const getUser = async (): Promise<User> => {
   try {
     console.log("asd");
     const token = localStorage.getItem("token");
-    const response = await api.get(`http://localhost:3001/auth/getUser`, {
+    const response = await api.get(`/auth/getUser`, {
       headers: { Authorization: token },
     });
     console.log("getUser log: " + response);

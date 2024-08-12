@@ -1,7 +1,8 @@
-import { FilmIcon } from "@heroicons/react/24/solid";
-import { Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const token = localStorage.getItem("token");
+
   const navigate = useNavigate();
 
   const handleNavigate = (path: string) => {
@@ -46,26 +47,30 @@ function NavBar() {
             >
               Services
             </a>
-            <a
-              href="/profile"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigate("/auth/login");
-              }}
-              className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
-            >
-              Login
-            </a>
-            <a
-              href="/profile"
-              onClick={(e) => {
-                e.preventDefault();
-                //handleNavigate("/auth/login");
-              }}
-              className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor bg-red-400 shadow-xl px-3 py-2 rounded-md text-lg font-medium"
-            >
-              BK
-            </a>
+            {!token && (
+              <a
+                href="/profile"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigate("/auth/login");
+                }}
+                className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor px-3 py-2 rounded-md text-lg font-medium"
+              >
+                Login
+              </a>
+            )}
+            {token && (
+              <a
+                href="/profile"
+                onClick={(e) => {
+                  e.preventDefault();
+                  //handleNavigate("/auth/login");
+                }}
+                className="hover:bg-navbarMenuHoverColor hover:text-navbarMenuHoverTextColor bg-red-400 shadow-xl px-3 py-2 rounded-md text-lg font-medium"
+              >
+                BK
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Services from "./Services";
 import Profile from "./Profile";
@@ -6,8 +6,12 @@ import About from "./About";
 import Home from "./Home";
 import Details from "./Details";
 import Login from "./Login";
+import { removeExpiredToken } from "../utils";
 
 const App: React.FC = () => {
+  useEffect(() => {
+    removeExpiredToken();
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
